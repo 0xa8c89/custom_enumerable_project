@@ -40,4 +40,13 @@ class Array
   def my_none?(&block)
     each { |i| return false if block.call(i) } and true
   end
+
+  def my_count(&block)
+    count = 0
+    if block_given?
+      each { |i| count += 1 if block.call(i) }
+      return count
+    end
+    size
+  end
 end
