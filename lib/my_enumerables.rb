@@ -18,4 +18,12 @@ class Array
       block.call(i, idx)
     end
   end
+
+  def my_select(&block)
+    r_arr = []
+    each do |i|
+      r_arr << i if block.call(i)
+    end
+    r_arr
+  end
 end
