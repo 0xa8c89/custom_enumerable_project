@@ -26,4 +26,9 @@ class Array
     end
     r_arr
   end
+
+  def my_all?(&block)
+    each { |i| return false unless block.call(i) }
+    true
+  end
 end
