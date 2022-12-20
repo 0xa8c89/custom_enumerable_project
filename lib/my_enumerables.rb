@@ -56,4 +56,8 @@ class Array
     each { |i| r_arr << block.call(i) }
     r_arr
   end
+
+  def my_inject(val, &block)
+    reduce(val) { |sum, i| block.call(sum, i) }
+  end
 end
