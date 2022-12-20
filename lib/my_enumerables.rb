@@ -36,4 +36,8 @@ class Array
     each { |i| return true if block.call(i) }
     false
   end
+
+  def my_none?(&block)
+    each { |i| return false if block.call(i) } and true
+  end
 end
