@@ -31,4 +31,9 @@ class Array
     each { |i| return false unless block.call(i) }
     true
   end
+
+  def my_any?(&block)
+    each { |i| return true if block.call(i) }
+    false
+  end
 end
