@@ -38,7 +38,8 @@ class Array
   end
 
   def my_none?(&block)
-    each { |i| return false if block.call(i) } and true
+    each { |i| return false if block.call(i) }
+    true
   end
 
   def my_count(&block)
@@ -48,5 +49,11 @@ class Array
       return count
     end
     size
+  end
+
+  def my_map(&block)
+    r_arr = []
+    each { |i| r_arr << block.call(i) }
+    r_arr
   end
 end
