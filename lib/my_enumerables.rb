@@ -8,22 +8,16 @@ end
 # to this method
 class Array
   def my_each(&block)
-    each do |i|
-      block.call(i)
-    end
+    each { |i| block.call(i) }
   end
 
   def my_each_with_index(&block)
-    each_with_index do |i, idx|
-      block.call(i, idx)
-    end
+    each_with_index { |i, idx| block.call(i, idx) }
   end
 
   def my_select(&block)
     r_arr = []
-    each do |i|
-      r_arr << i if block.call(i)
-    end
+    each { |i| r_arr << i if block.call(i) }
     r_arr
   end
 
